@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+   <head>
+      <title>Conway's Life Game</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+      <link href="css/main.css" rel="stylesheet" />
+    </style>
+   </head>
+<body>
+   <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+         <a class="brand" href="#" id="inf391">&nbsp;&nbsp;&nbsp;INF-391</a>
+         <ul class="nav">
+            <li class="active"><a href="#">Inicio</a></li>
+            <li><a href="#desarrollo">Desarrollo</a></li>
+            <li><a href="#jugadas">Algunas jugadas</a></li>
+         </ul>
+      </div>
+   </div>
+   <div id="main-container" class="container">
+      <center>
+         <h1 class="content-title">El juego de <br> la vida </h1>
+         <h6 class="content-title">Sergio Guillen Mantilla</h6>
+      </center>
+      <!-- -->
+      <div class="option-buttons">
+         <button id="btnPlay" class="btn btn-inverse" type="button">
+            <i class="icon-play icon-white"></i>Iniciar
+         </button>
+         <button id="btnStop" class="btn btn-inverse" type="button" disabled="true">
+            <i class="icon-stop icon-white"></i>Detener
+         </button>
+         <button id="btnRestart" class="btn btn-inverse" type="button" disabled="true">
+            <i class="icon-repeat icon-white"></i>Reiniciar
+         </button>
+         <span id="state" class="label label-important">Detenido</span>
+      </div>
+      <!-- Used by Kinetics -->
+      <div id="conwayLayout" style="float:left;"></div>
+
+      <div id="info-content">
+         &nbsp;<br /><br />
+         <div class="row-fluid">
+            <div class="span6">
+               <h2 id="desarrollo" class="content-title">Tecnolog&iacute;as</h2>
+               <p class="content-body" algin="justify">
+                  El desarrollo fue realizado utilizando HTML5, utilizando las siguientes tecnolog&iacute;as:
+               </p>
+               <ul class="content-body">
+                  <li><a href="http://kineticjs.com/">KineticJS.- </a>
+                     Framework para el trabajo con canvas, utilizado para
+                     la parte de gr&aacute;ficos, figuras y animaci&oacute;n
+                  </li>
+                  <li>
+                     <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap.- </a>
+                     Utilizado para la interfaz de usuario, estilos, etc.
+                  </li>
+                  <li>
+                     <a href="http://jquery.com">jQuery.- </a>
+                     Necesario para trabajar con Twitter Bootstrap y para controlar algunos eventos.
+                  </li>
+               </ul>
+            </div>
+            <div class="span6">
+               <h2 class="content-title">Herramientas</h2>
+               <p class="content-body" algin="justify">
+                  Se utilizo <a href="http://www.sublimetext.com/2">Sublime Text 2</a> como editor de texto,
+                  tambi&eacute;n las herramientas de depuraci&oacute;n de Google Chrome
+               </p>
+               <p class="content-body" algin="justify">
+                  Esta aplicaci&oacute;n tuvo como Sistema Operativo de prueba
+                  a <a href="http://www.debian.org/">GNU/Linux Debian</a>.
+               </p>
+            </div>
+         </div>
+         <div class="row">
+            <div class="span9">
+               <h2 id="jugadas" class="content-title">Algunas jugadas</h2>
+               <p class="content-body" algin="justify">
+                  El juego de la vida tiene algunas jugadas peculiares
+                  y que se fueron estudiando a lo largo del tiempo.
+               </p>
+               <p class="content-body" algin="justify">
+                  Estas jugadas pueden Bodegones (Still lifes), Osciladores y Naves Espaciales.
+               </p>
+               <ul class="content-body">
+                  <li>Bodegones:
+                     <ul class="content-body">
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/9/96/Game_of_life_block_with_border.svg">Block</a></li>
+                        <li><a href="http://upoad.wikimedia.org/wikipedia/commons/6/67/Game_of_life_beehive.svg">Beehive</a></li>
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/f/f4/Game_of_life_loaf.svg">Loaf</a></li>
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/7/7f/Game_of_life_boat.svg">Boat</a></li>
+                     </ul>
+                  </li>
+                  <li>Osciladores:
+                     <ul class="content-body">
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/9/95/Game_of_life_blinker.gif">Blinker</a></li>
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/1/12/Game_of_life_toad.gif">Toad</a></li>
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/1/1c/Game_of_life_beacon.gif">Beacon</a></li>
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/0/07/Game_of_life_pulsar.gif">Pulsar</a></li>
+                     </ul>
+                  </li>
+                  <li>Naves espaciales:
+                     <ul class="content-body">
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/f/f2/Game_of_life_animated_glider.gif">Glider</a></li>
+                        <li><a href="http://upload.wikimedia.org/wikipedia/commons/3/37/Game_of_life_animated_LWSS.gif">Lightweight spaceship</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <br /><br />
+      </div>
+   </div>
+
+
+   <!-- Scripts -->
+   <script src="js/jquery.js"></script>
+   <script src="js/bootstrap-transition.js"></script>
+   <script src="js/bootstrap-alert.js"></script>
+   <script src="js/bootstrap-modal.js"></script>
+   <script src="js/bootstrap-dropdown.js"></script>
+   <script src="js/bootstrap-scrollspy.js"></script>
+   <script src="js/bootstrap-tab.js"></script>
+   <script src="js/bootstrap-tooltip.js"></script>
+   <script src="js/bootstrap-popover.js"></script>
+   <script src="js/bootstrap-button.js"></script>
+   <script src="js/bootstrap-collapse.js"></script>
+   <script src="js/bootstrap-carousel.js"></script>
+   <script src="js/bootstrap-typeahead.js"></script>
+   <script src="js/kinetic-v4.3.3.min.js"></script>
+   <script src="js/conway.js"></script>
+   <script src="js/conway-ui.js"></script>
+</body>
+</html>
